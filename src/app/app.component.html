@@ -1,16 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <div style="text-align:center">
-    <h1>
-      Welcome {{ title }} Soumya Shashank!
-    </h1>
-  </div>
- <div class="container">
-    <app-list-employees></app-list-employees>
-</div>
-    
+
+
+<div class="container">
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="list">List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="create">Create</a>
+    </li>
+  </ul>
+
   <router-outlet></router-outlet>
- Soumya
+
 </div>
-
-
