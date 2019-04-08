@@ -1,4 +1,4 @@
-<form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
+<form #employeeForm="ngForm" ngNativeValidate (ngSubmit)="saveEmployee(employeeForm)">
   <div class="card">
     <div class="card-header bg-secondary">
       <h3 class="card-title"> Create Employee </h3>
@@ -7,7 +7,7 @@
     <div class="card-body">
       <div class="form-group">
         <label for="fullName">Full Name</label>
-        <input id="fullName" name="fullName" class="form-control" type="text" [(ngModel)]="fullName" />
+        <input id="fullName" name="fullName" class="form-control" type="text" required #fullNameControl ="ngModel" [(ngModel)]="fullName" />
       </div>
       <div class="form-group">
         <label for="email">Email</label>
@@ -67,7 +67,7 @@
       <div class="row">
         <div class="form-group col-md-5">
           <label for="dateOfBirth">Date of Birth</label>
-          <input id="dateOfBirth" name="dateOfBirth" class="form-control" type="text" bsDatepicker
+          <input id="dateOfBirth" name="dateOfBirth" class="form-control"  required type="text" bsDatepicker
             [bsConfig]="datePickerConfig" [(ngModel)]="dateOfBirth" />
         </div>
       </div>
@@ -79,7 +79,7 @@
 
 
       <div class="form-group">
-        <button class="btn btn-primary" (click)="togglePhotoPreview()" [disabled]="disableEnableButton">Show Preview</button>
+        <button class="btn btn-primary" type="button" (click)="togglePhotoPreview()" [disabled]="disableEnableButton">{{photoPreview ? "Hide ": "Show "}} Preview</button>
       </div>
 
       <div>

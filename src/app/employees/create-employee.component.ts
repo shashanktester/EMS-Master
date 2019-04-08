@@ -38,7 +38,7 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   togglePhotoPreview(){
-    this.photoPreview = true;
+    this.photoPreview = !this.photoPreview;
   }
 
   disableEnableBtn(){
